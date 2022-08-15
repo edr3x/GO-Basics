@@ -12,6 +12,12 @@ func main() {
 }
 ```
 
+### Run the program
+
+```bash
+go run hello.go
+```
+
 ## Other Topics via table below
 
 <table>
@@ -21,6 +27,6 @@ func main() {
     </tr>
     <tr>
         <td>1</td>
-        <td><a href ="https://github.com/edr3x/GO-Learning/tree/master/1.variables"> Variables </a></td>
+        <td><a href ="https://github.com/edr3x/GO-Learning/tree/master/1.datatypes"> Datatypes </a></td>
     </tr>
 </table>
