@@ -12,34 +12,15 @@ func main() {
 }
 ```
 
-## Variables
+## Other Topics via table below
 
-### String
-
-```go
-var firstName string = "Obi-Wan"
-
-var lastName = "kenobi"
-
-var signature string
-
-signature = "Hello There"
-```
-
-- String Interpolation
-
-```go
-fmt.Println(firstName, lastName, "says", signature)
-```
-
-- Variable Declaration Shorthand
-
-```go
-func main(){
-    name := "Obi-Wan Kenobi"
-}
-```
-
-> Note
->
-> - Variable declaration shorthand can only be used inside a function.
+<table>
+    <tr>
+        <th>Number</th>
+        <th>Topic</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><a href ="https://github.com/edr3x/GO-Learning/tree/master/1.variables"> Variables </a></td>
+    </tr>
+</table>
