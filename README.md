@@ -33,4 +33,8 @@ go run hello.go
         <td>2</td>
         <td><a href ="https://github.com/edr3x/GO-Learning/tree/master/2.formatted_string"> Formatted String </a></td>
     </tr>
+    <tr>
+        <td>3</td>
+        <td><a href ="https://github.com/edr3x/GO-Learning/tree/master/3.array_and_slices"> Array and Slices </a></td>
+    </tr>
 </table>
