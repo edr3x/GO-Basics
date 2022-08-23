@@ -193,3 +193,43 @@ range1 = append(range1, "broda") // adds broda to end of range1
 fmt.Println(range1)
 
 ```
+
+# Loops
+
+## While loop
+
+```rust
+    x:= 0
+
+    for x<5 { // while loop
+        fmt.Println("value of x is:", x)
+        x++
+    }
+```
+
+## For loop
+
+```rust
+    names := []string{"obi-wan","yoda", "anakin", "gervious", "leila"}
+
+    for i := 0 ; i<len(names); i++{ // for loop
+        fmt.Println(names[i])
+    }
+```
+
+## For loop with range
+
+- just like for in loop in JS
+
+```rust
+    names := []string{"obi-wan","yoda", "anakin", "gervious", "leila"}
+
+    for index, val := range names{
+        fmt.Printf("the value at position %v is %v \n", index, val)
+    }
+
+    for _,val := range names{ // if we don't want index and only value then
+        fmt.Printf("the value is %v \n", val)
+    }
+
+```
