@@ -389,4 +389,53 @@ func orderNum(){
 go run main.go greeting.go
 ```
 
+# Maps
 
+- like other languages all of the keys can be of multiple different primitive type like strings, floats e.t.c.
+- but unlike others all of the keys in single map must have same type 
+- also all of the values of single map must have single type
+
+```go
+varname := map[string]float64{}
+```
+
+- here we created a map with key of type `string` and value of type `float64`
+
+```go
+	menu := map[string]float64{
+		"momo":    150.0,
+		"noodles": 100.0,
+		"soup":    35.5,
+		"tea":     25.5,
+	}
+
+	fmt.Println(menu)
+    fmt.Println(menu["soup"])
+
+    // Looping through the map
+
+    for k,v := range menu{
+        fmt.Println(k, "-", v)
+    }
+
+    // interger key type 
+
+    phonediary := map[int]string{
+        98524: "Jhon",
+        98443: "Doe",
+        97469: "Kenobi",
+    }
+
+   fmt.Println(phonediary) 
+   fmt.Println(phonediary[98524])
+
+   phonediary[97469] = "yoda"
+
+   fmt.Println(phonediary)
+ 
+```
+
+> Note:
+> 
+> Key and value can be of any type but in single map there can be only one type of key
+> and one type of value.
