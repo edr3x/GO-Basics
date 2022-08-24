@@ -540,3 +540,67 @@ func updateName(n *string){
 
 - Here we passed the memory address of variable `name` so the value pointed by function is also the same memory address
 - Since original memory address is pointed thus value of variable `name` is changed
+
+# Structs and Custom Types
+
+```go
+type bill struct{
+    name string
+    items map[string]float64
+    tip float64
+}
+
+// make new bills
+func newBill(name string) bill {
+    b := bill{
+        name:name,
+        items: map[string]float64{},
+        tip: 0,
+    }
+
+    return b
+}
+
+func main() {
+    mybill := newBill("yoda's bill")
+
+    fmt.Println(mybill)
+    
+}
+```
+
+- this way we can create a struct and use it
+
+## Receiver Function in struct
+
+- Receiver Function is like normal function but can only be used via specified struct 
+
+```go
+func (b bill) format() string {
+	fs := "Bill breakdown: \n"
+	var total float64 = 0
+
+	//list items
+	for k, v := range b.items {
+		fs += fmt.Sprintf("%-25v ...$%v \n", k+":", v)
+		total += v
+	}
+
+	//total
+    fs += fmt.Sprintf("%-25v ...$%0.2f", "total:", total) // -25 gives 25 spaces on right
+                                                        // +25 gives 25 spaces on left
+
+    return fs
+}
+```
+ 
+- in main.go
+
+```go
+func main() {
+    mybill := newBill("yoda's bill")
+
+    fmt.Println(mybill.format())
+    
+}
+```
