@@ -502,3 +502,41 @@ func main(){
 - Here we get updated menu that is we get additional key value pair on output
 - This behaviour is done by `Slices, Maps functions`
 - Can be called as `Pointer wrapper values`
+
+# Pointer
+
+- Pointer are are datatypes which points to another memory address 
+- denoted by `&varname`
+- can be deferenced by using `*`
+
+```go
+    name := "yoda"
+
+    mem := &name
+
+    fmt.Println("memory address is :", mem) // prints memory address
+    fmt.Println("value at memory address is :", *mem) // prints 'yoda'
+   
+```
+
+### another example 
+
+```go
+func main() {
+    name := "yoda"
+
+    mem := &name
+    
+    fmt.Println(name) // prints "yoda"
+    updateName(mem)
+    fmt.Println(name) // prints "kenobi"
+
+}
+
+func updateName(n *string){
+    *n = "kenobi"
+}
+```
+
+- Here we passed the memory address of variable `name` so the value pointed by function is also the same memory address
+- Since original memory address is pointed thus value of variable `name` is changed
