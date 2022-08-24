@@ -198,7 +198,7 @@ fmt.Println(range1)
 
 ## While loop
 
-```rust
+```go
     x:= 0
 
     for x<5 { // while loop
@@ -209,7 +209,7 @@ fmt.Println(range1)
 
 ## For loop
 
-```rust
+```go
     names := []string{"obi-wan","yoda", "anakin", "gervious", "leila"}
 
     for i := 0 ; i<len(names); i++{ // for loop
@@ -221,7 +221,7 @@ fmt.Println(range1)
 
 - just like for in loop in JS
 
-```rust
+```go
     names := []string{"obi-wan","yoda", "anakin", "gervious", "leila"}
 
     for index, val := range names{
@@ -232,4 +232,34 @@ fmt.Println(range1)
         fmt.Printf("the value is %v \n", val)
     }
 
+```
+
+# Conditonals
+
+```go
+	age := 25
+
+    if age < 30 {
+        fmt.Println("is less than 30 ")
+    } else if age< 40 {
+        fmt.Println("age is less than 40")
+    } else {
+        fmt.Println("age is not less than 45")
+    }
+
+    names := []string{"obi-wan","yoda", "anakin", "gervious", "leila"}
+
+    for index, val := range names{
+        if index == 1 {
+            fmt.Println("continuing at pos ", index)
+            continue
+        }
+
+        if index > 2 {
+            fmt.Println("breaking at pos", index)
+            break
+        }
+
+        fmt.Printf("the value at pos %v is %v \n", index, val)
+    }
 ```
