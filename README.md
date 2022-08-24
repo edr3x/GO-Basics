@@ -335,3 +335,58 @@ func main(){
     fmt.Println(fn1, sn1)
 }
 ```
+
+# Package Scope
+
+- if files are in same package name i.e. `package main` for this example 
+- they share the same scope and we can access variables across files if they are global variable
+
+## Example
+
+### main.go
+
+```go
+package main
+
+import "fmt"
+
+var order = 66
+
+func main() {
+
+	sayHello("kenobi")
+
+	for _, v := range points {
+		fmt.Println(v)
+	}
+
+    orderNum()
+}
+```
+
+### greeting.go
+
+```go
+package main
+
+import "fmt"
+
+var points = []int{20, 55, 343, 23, 45}
+
+func sayHello(n string) {
+	fmt.Println("hello", n)
+}
+
+func orderNum(){
+    fmt.Println("order number is :", order)
+}
+```
+
+- As shown above we are accessing the variables across files 
+- we have to run both files at same time to work 
+
+```sh
+go run main.go greeting.go
+```
+
+
