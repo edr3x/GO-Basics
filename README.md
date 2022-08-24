@@ -439,3 +439,66 @@ varname := map[string]float64{}
 > 
 > Key and value can be of any type but in single map there can be only one type of key
 > and one type of value.
+
+# Passing
+
+- Go is a Pass-by-value language
+- Go makes copies of values when passed into functions
+
+```go
+func updateName(n string){
+    n = "yoda"
+}
+
+func main() {
+    name:= "kenobi"
+
+    updateName(name)
+
+    fmt.Println(name)
+}
+```
+
+- We get output `kenobi` because function passes the copy of the original value not the original value
+- but if we want to change the original value then we can do this:
+
+```go
+func updateName(n string) string {
+    n = "yoda"
+    return x
+}
+
+func main() { 
+    name:= "kenobi"
+
+    name = updateName(name)
+
+    fmt.Println(name)
+}
+```
+
+- This behaviour is done by `strings, ints, bools, floats, arrays, structs`
+- can be called as `Non-Pointer Values`
+
+### now for another type
+
+```go
+func updateMenu(y map[string]float64){
+    y["tea"] = 25.33
+}
+
+func main(){
+    menu := map[string]float64{
+        "momo": 120.5,
+        "ice-cream": 30.5,
+    }
+
+    updateMenu(menu)
+
+    fmt.Println(menu)
+}
+```
+
+- Here we get updated menu that is we get additional key value pair on output
+- This behaviour is done by `Slices, Maps functions`
+- Can be called as `Pointer wrapper values`
