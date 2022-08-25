@@ -59,6 +59,11 @@ func (b *bill) addItem(name string, price float64){
 }
 ```
 
+> Note:
+>
+> By only changing the type of receiver function to pointer, GO automatically handles all other things inside functions
+> We don't have to make variables inside the functions as pointer too.
+
 ## main.go file for the files above
 
 ```go
