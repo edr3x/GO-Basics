@@ -85,3 +85,30 @@ func main() {
 ## User Input
 
 - Taking user input from terminal insted of hardcoding
+
+- `bufio` package lets us use io and `os` package lets us use terminal as input
+
+```go 
+    reader := bufio.NewReader(os.Stdin)
+
+    fmt.Print("Create a new bill name:") 
+    name, _ := reader.ReadString('\n') // Reads from the console
+
+    name = strings.TrimSpace(name) // triming the space around the string
+
+    fmt.Println(name)
+
+```
+
+## Parsing String to float64
+
+- We have to use package called `strconv` (string convert) and use method on that called `parseFloat`
+- that method gives two values that is 'value' and 'error'
+
+```go
+floatOut,err := strconv.ParseFloat(stringInput,64)  
+```
+
+- the method above gives output in `floatOut` variable and if error occurs then it saves that in `err` variable
+
+

@@ -1,17 +1,78 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+)
+
+func getInput(prompt string,r *bufio.Reader) (string, error){
+    fmt.Print(prompt)
+    
+    input, err := r.ReadString('\n') // Reads from the console
+                      // this means this will read untill new line i.e. `enter` is pressed
+    return strings.TrimSpace(input), err
+}
+
+func createBill() bill {
+    reader := bufio.NewReader(os.Stdin)
+    name,_ := getInput("Create a new bill name", reader)
+
+    b := newBill(name)
+    fmt.Println("Created the bill - ", b.name)
+
+    return b
+}
+
+func promptOptions(b bill){
+    reader := bufio.NewReader(os.Stdin)
+
+    opt, _ := getInput("Choose options \n (a - add item, s - save bill, t - add tip)", reader)
+
+    switch opt {
+    case "a":
+        name, _ := getInput("Item name:", reader)
+        price, _ := getInput("Item price:", reader)
+
+        p,err := strconv.ParseFloat(price,64)  
+        if err != nil{
+            fmt.Println("The price must be a number")
+            promptOptions(b)
+        }
+        b.addItem(name,p)
+
+        fmt.Println("Item added - ",name, price) 
+        promptOptions(b)
+
+    case "t":
+        tip, _ := getInput("Enter tip amount:", reader)
+
+        t,err := strconv.ParseFloat(tip,64)  
+        if err != nil{
+            fmt.Println("The tip must be a number")
+            promptOptions(b)
+        }
+        b.updateTip(t)
+
+        
+
+        fmt.Println("Tip added - ",tip)
+        promptOptions(b)
+
+    case "s":
+        fmt.Println("you choose to save the bill", b)
+
+    default:
+        fmt.Println("not valid option")
+        promptOptions(b)
+    }
+}
 
 func main() {
-    mybill := newBill("yoda's bill")
+    mybill := createBill()
 
-    mybill.addItem("soup", 4.50) 
-    mybill.addItem("pie", 9.10)
-    mybill.addItem("tandoori chicken", 44.2)
-    mybill.addItem("Biryani", 7.50)
+    promptOptions(mybill)    
 
-    mybill.updateTip(10)
-
-    fmt.Println(mybill.format())
-    
 }

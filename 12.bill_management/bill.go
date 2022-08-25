@@ -20,7 +20,6 @@ func newBill(name string) bill {
 }
 
 //Receiver function to format the bill
-
 func (b *bill) format() string {
 	fs := "Bill breakdown: \n"
 	var total float64 = 0
