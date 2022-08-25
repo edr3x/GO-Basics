@@ -111,4 +111,15 @@ floatOut,err := strconv.ParseFloat(stringInput,64)
 
 - the method above gives output in `floatOut` variable and if error occurs then it saves that in `err` variable
 
+## Saving result to .txt file
 
+- we use `os` package for this in which we use `WriteFile` property which takes three arguments
+- path to save file, file contents and permission
+
+```go
+    data := []byte(b.format())
+    err := os.WriteFile("bills/"+b.name+".txt", data, 0644)
+    if err != nil{
+        panic(err)
+    }
+```

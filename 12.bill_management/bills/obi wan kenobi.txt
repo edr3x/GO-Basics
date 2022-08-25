@@ -1,0 +1,6 @@
+Bill breakdown: 
+momo:                     ...$100 
+pie:                      ...$55 
+tea:                      ...$20 
+tip:                      ...$50.00
+total:                    ...$225.00

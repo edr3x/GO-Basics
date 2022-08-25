@@ -18,7 +18,7 @@ func getInput(prompt string,r *bufio.Reader) (string, error){
 
 func createBill() bill {
     reader := bufio.NewReader(os.Stdin)
-    name,_ := getInput("Create a new bill name", reader)
+    name,_ := getInput("Create a new bill name: ", reader)
 
     b := newBill(name)
     fmt.Println("Created the bill - ", b.name)
@@ -56,13 +56,12 @@ func promptOptions(b bill){
         }
         b.updateTip(t)
 
-        
-
         fmt.Println("Tip added - ",tip)
         promptOptions(b)
 
     case "s":
-        fmt.Println("you choose to save the bill", b)
+        b.save()
+        fmt.Println("saved bill to a file", b.name)
 
     default:
         fmt.Println("not valid option")
