@@ -604,3 +604,7 @@ func main() {
     
 }
 ```
+
+## Other things like Structs, Parsing and saving to file are [here](https://github.com/edr3x/GO-Learning/tree/master/12.bill_management)
+
+
