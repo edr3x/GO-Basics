@@ -123,3 +123,5 @@ floatOut,err := strconv.ParseFloat(stringInput,64)
         panic(err)
     }
 ```
+
+## For more detail check the code
