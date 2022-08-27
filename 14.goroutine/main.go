@@ -22,8 +22,8 @@ func main() {
     */
 
     // Now with goroutine
-    go compute(5)
-    go compute(5)
+     go compute(5)
+     compute(5)
 
     // Adding `go` keyword in front of a function make them goroutene
     // They execute at parallel i.e. we get following output

@@ -615,3 +615,15 @@ type shape interface {
     circumf() float64
 }
 ```
+
+## Goroutine
+
+- A goroutine is a lightweight thread managed by the Go runtime
+
+```
+    // normal sync function call
+    foo(var)
+    
+    // goroutine
+    go foo(var)
+```
